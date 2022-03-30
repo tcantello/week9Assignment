@@ -51,12 +51,10 @@ namespace week9Assignment
         static void Main(string[] args)
         {
             string userInput = "";
-            string input = "";
 
             Console.WriteLine("Please enter the path to the text file you want to open.");
             userInput = @"" + Console.ReadLine();
             Console.WriteLine();
-
 
             if(UserPath(out string validInput, userInput))
             {
