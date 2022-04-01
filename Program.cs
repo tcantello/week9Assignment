@@ -2,7 +2,7 @@
 Program - week9Assignment
 Programer - Toby Cantello
 Date Created - 3/25/2022
-Last Date Updated - 3/30/2022
+Last Date Updated - 3/31/2022
 */
 
 using System;
@@ -18,7 +18,7 @@ namespace week9Assignment
         static bool UserPath(out string validInput, string userInput)
         {
             validInput = null;
-            var pathChecker = new Regex(@"(^[a-zA-Z]:/)|(\.txt+$)|(\.TXT$)");
+            var pathChecker = new Regex(@"^[a-zA-Z]:/|(.txt)$|(.TXT$)");
 
             if (pathChecker.IsMatch(userInput))
             {
@@ -26,7 +26,7 @@ namespace week9Assignment
             }
             else
             {
-                Console.WriteLine("You didn't enter a path to a text file");
+                Console.WriteLine("Not a valid path. You didn't enter a path to a text file");
                 return false;
             }
 
@@ -56,7 +56,7 @@ namespace week9Assignment
             }
             else
             {
-                int wordCount = input.Split(' ').Length;
+                int wordCount = input.Split(' ').Length + 1;
                 Console.WriteLine("There are " + wordCount + " words in the file.");
             }
         }
